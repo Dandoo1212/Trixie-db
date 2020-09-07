@@ -5,7 +5,7 @@ import lombok.Getter;
 
 import java.util.List;
 
-@AllArgsConstructor
+@AllArgsConstructor(staticName = "of")
 @Getter
 public class QueryResult {
     List<Row> rows;

@@ -9,10 +9,10 @@ import java.util.List;
 @AllArgsConstructor(staticName = "of")
 @Getter(value = AccessLevel.PACKAGE)
 public class QueryAfterSelect {
-    private QueryUtils queryUtils;
-    private List<String> fieldsToFetch;
+    private final QueryUtils queryUtils;
+    private final List<String> fieldsToFetch;
 
-    public QueryAfterFrom from(String tableName){
+    public QueryAfterFrom from(String tableName) {
         return QueryAfterFrom.of(this, queryUtils, tableName);
     }
 }

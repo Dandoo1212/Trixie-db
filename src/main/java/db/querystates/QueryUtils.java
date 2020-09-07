@@ -1,7 +1,6 @@
 package db.querystates;
 
 import db.QueryResult;
-import db.Row;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -11,8 +10,7 @@ public class QueryUtils {
 
     QueryResult execute(QueryAfterFrom queryAfterFrom){
         String query = queryCreator.createQuery(queryAfterFrom);
-        return datasourceFetcher.fetch(query);
-
+        return datasourceFetcher.fetch(query, queryAfterFrom.getQueryAfterSelect().getFieldsToFetch());
     }
 
 }

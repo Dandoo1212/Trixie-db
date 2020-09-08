@@ -1,12 +1,9 @@
 package db.querystates;
 
-public class QueryCreator {
+import static java.util.Arrays.asList;
 
-    public String createQuery(QueryAfterFrom queryAfterFrom) {
-        String fields = String.join(", ", queryAfterFrom
-                .getQueryAfterSelect()
-                .getFieldsToFetch());
-        String tableName = queryAfterFrom.getTableName();
-        return "SELECT " + fields + " FROM " + tableName;
+public class QueryCreator {
+    public static QueryAfterSelect select(String... parameters){
+        return QueryAfterSelect.of(new QueryMaker(), asList(parameters));
     }
 }

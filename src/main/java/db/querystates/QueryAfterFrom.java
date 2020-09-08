@@ -1,6 +1,5 @@
 package db.querystates;
 
-import db.QueryResult;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,10 +8,10 @@ import lombok.Getter;
 @Getter(value = AccessLevel.PACKAGE)
 public class QueryAfterFrom {
     private final QueryAfterSelect queryAfterSelect;
-    private final QueryUtils queryUtils;
+    private final QueryMaker queryMaker;
     private final String tableName;
 
-    public QueryResult execute(){
-        return queryUtils.execute(this);
+    public String create(){
+        return queryMaker.createQuery(this);
     }
 }

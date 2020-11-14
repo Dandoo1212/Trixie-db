@@ -1,12 +1,8 @@
 package db.querystates;
 
-import lombok.AccessLevel;
-import lombok.Getter;
 import utils.Condition;
-import utils.EmptyCondition;
 
 
-@Getter(value = AccessLevel.PACKAGE)
 public class QueryAfterFrom {
     private final QueryMaker queryMaker;
 
@@ -14,7 +10,7 @@ public class QueryAfterFrom {
         this.queryMaker = queryMaker;
     }
 
-    public static QueryAfterFrom of(QueryMaker queryMaker) {
+    static QueryAfterFrom of(QueryMaker queryMaker) {
         return new QueryAfterFrom(queryMaker);
     }
 
@@ -24,7 +20,7 @@ public class QueryAfterFrom {
         return this;
     }
 
-    public QueryAfterWhere where(Condition whereCondition){
+    public QueryAfterWhere where(Condition whereCondition) {
         return QueryAfterWhere.of(queryMaker.where(whereCondition));
     }
 

@@ -3,10 +3,10 @@ package db.querystates;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor(staticName = "of")
-public class QueryAfterOrder {
+public class QueryAfterWhereInUpdate {
     private final QueryMaker queryMaker;
 
-    public String create() {
+    public String create(){
         return queryMaker.getQueryText();
     }
 }

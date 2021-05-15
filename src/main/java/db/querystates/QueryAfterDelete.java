@@ -10,4 +10,8 @@ public class QueryAfterDelete {
     public QueryAfterWhereInDelete where(Condition whereCondition) {
         return QueryAfterWhereInDelete.of(queryMaker.where(whereCondition));
     }
+
+    public QueryAfterWhereInDelete where(String whereConditionString) {
+        return QueryAfterWhereInDelete.of(queryMaker.where(whereConditionString));
+    }
 }

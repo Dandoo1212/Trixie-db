@@ -13,4 +13,8 @@ public class QueryAfterSet {
     public QueryAfterWhereInUpdate where(Condition condition){
         return QueryAfterWhereInUpdate.of(queryMaker.where(condition));
     }
+
+    public QueryAfterWhereInUpdate where(String conditionString){
+        return QueryAfterWhereInUpdate.of(queryMaker.where(conditionString));
+    }
 }

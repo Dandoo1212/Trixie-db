@@ -1,6 +1,6 @@
 package utils;
 
-public class EmptyCondition {
+public class Conditions {
     public static ConditionWhere where(String leftOperandParameter){
         return ConditionWhere.of(leftOperandParameter);
     }

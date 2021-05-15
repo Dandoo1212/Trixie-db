@@ -24,6 +24,11 @@ public class QueryAfterFrom {
         return QueryAfterWhere.of(queryMaker.where(whereCondition));
     }
 
+    public QueryAfterWhere where(String whereConditionString) {
+        return QueryAfterWhere.of(queryMaker.where(whereConditionString));
+    }
+
+
     public QueryAfterOrder orderBy(String orderParameter) {
         return QueryAfterOrder.of(queryMaker.orderBy(orderParameter));
     }

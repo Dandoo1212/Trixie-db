@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 
 class QueryMaker {
 
+    private static final String ASTERISK = "*";
+
     private final StringBuffer queryText;
 
     private QueryMaker(StringBuffer queryText) {
@@ -16,7 +18,9 @@ class QueryMaker {
     }
 
     static QueryMaker createSelectMaker(String... selectParameters) {
-        StringBuffer stringBuffer = new StringBuffer("SELECT ").append(String.join(", ", selectParameters));
+
+        StringBuffer stringBuffer = new StringBuffer("SELECT ").append(
+                selectParameters.length == 0 ? ASTERISK : String.join(", ", selectParameters));
         return new QueryMaker(stringBuffer);
     }
 
@@ -70,6 +74,12 @@ class QueryMaker {
         queryText
                 .append(" WHERE ")
                 .append(whereCondition.createConditionString());
+        return this;
+    }
+
+    QueryMaker where(String whereConditionString){
+        queryText.append(" WHERE ")
+                 .append(whereConditionString);
         return this;
     }
 
